@@ -24,26 +24,41 @@ console.log('userKM:', userKM)
 const userAge = parseInt(prompt("Quanti anni hai?").trim());
 console.log('userAge:', userAge);
 
+//Controllo per assicurarsi che non scrivono altro oltre che numeri
+if (isNaN(userKM && userAge)) {
+    alert("Non hai inserito un valore valido!")
+    window.location.reload();
+}
+
 // 2# calcolo prezzo moltiplicando km * 0.21€km
 
-const finalKMPrice = userKM * 0.21
+let finalKMPrice = userKM * 0.21;
+
+finalKMPrice = parseInt(finalKMPrice.toFixed(2));
 
 console.log('finalKmPrice: ', finalKMPrice)
 
 // #3 calcolo percentuali
 
-const off20 = finalKMPrice - finalKMPrice * 20 / 100;
+let off20 = finalKMPrice - finalKMPrice * 20 / 100;
+off20 = parseInt(off20.toFixed(2));
 console.log('off20: ', off20);
 
-const off40 = finalKMPrice - finalKMPrice * 40 / 100;
+let off40 = finalKMPrice - finalKMPrice * 40 / 100;
+off40 = parseInt(off40.toFixed(2));
 console.log('off40: ', off40);
 
 // 4# condizioni
 
+const onPagePrice = document.getElementById("final-price");
+
 if (userAge <= 18) {
+    onPagePrice.innerText = `Hai ricevuto uno sconto del 20% poichè sei minorenne, Prezzo finale: ${off20}€`;
     console.log("Hai ricevuto uno sconto del 20%, il prezzo migliore per te che sei minorenne  è ", off20)
 } else if (userAge >= 65) {
+    onPagePrice.innerText = `Hai ricevuto uno sconto del 40% poichè sei over 65, Prezzo finale: ${off40}€`;
     console.log("Hai ricevuto uno sconto del 40%, il prezzo migliore per te che sei over 65  è ", off40)
 } else {
+    onPagePrice.innerText = `Il Prezzo finale per le tue necessità è: ${finalKMPrice}€`;
     console.log("Il prezzo finale per le tue necessità è: ", finalKMPrice)
 }
