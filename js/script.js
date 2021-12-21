@@ -52,7 +52,7 @@ console.log('off40: ', off40);
 
 const onPagePrice = document.getElementById("final-price");
 
-if (userAge <= 18) {
+if (userAge < 18) {
     onPagePrice.innerText = `Hai ricevuto uno sconto del 20% poichè sei minorenne, Prezzo finale: ${off20}€`;
     console.log("Hai ricevuto uno sconto del 20%, il prezzo migliore per te che sei minorenne  è ", off20)
 } else if (userAge >= 65) {
