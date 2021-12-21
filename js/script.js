@@ -15,3 +15,14 @@ L'output del prezzo finale va messo fuori in forma umana
 2- calcolare prezzo moltiplicando per 0.21€ al km
 3- condizioni se minorenni o se over 65.
 */
+
+// #1 Chiedo al cliente età e km
+const userKM = parseInt(prompt("Quanti chilometri devi percorrere?").trim());
+console.log('userKM:', userKM)
+
+const userAge = parseInt(prompt("Quanti anni hai?").trim());
+console.log('userAge:', userAge);
+
+// 2# calcolo prezzo moltiplicando km * 0.21€km
+
+console.log(userKM * 0.21)
