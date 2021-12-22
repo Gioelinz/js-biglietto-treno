@@ -25,7 +25,7 @@ const userAge = parseInt(prompt("Quanti anni hai?").trim());
 console.log('userAge:', userAge);
 
 //Controllo per assicurarsi che non scrivono altro oltre che numeri
-if (isNaN(userKM && userAge)) {
+if (isNaN(userKM) || isNaN(userAge)) {
     alert("Non hai inserito un valore valido!")
     window.location.reload();
 }
